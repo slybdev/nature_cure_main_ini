@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-green text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="p-2 bg-white/10 rounded-lg">
@@ -58,12 +58,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-brand-gold font-bold uppercase tracking-widest text-xs mb-6">Legal</h3>
-            <p className="text-[10px] text-emerald-100/50 leading-relaxed italic">
-              Disclaimer: These products are not intended to diagnose, treat, cure, or prevent any disease. Always consult with a healthcare professional before starting any new herbal supplement.
-            </p>
-          </div>
+
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest text-emerald-100/30 font-medium">
