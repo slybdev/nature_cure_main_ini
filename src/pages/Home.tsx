@@ -219,7 +219,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-brand-green rounded-[3rem] p-12 md:p-20 relative overflow-hidden text-center">
             <div className="absolute inset-0 opacity-10">
