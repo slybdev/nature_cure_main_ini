@@ -21,7 +21,7 @@ export default function Footer() {
               Empowering wellness through nature. We provide premium herbal support and natural health education for a better quality of life.
             </p>
             <div className="flex gap-4">
-              <a href="https://facebook.com" className="p-2 bg-white/5 hover:bg-white/10 rounded-full transition-colors">
+              <a href="https://www.facebook.com/share/18S2Vo37jT/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-full transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="mailto:naturecuresinitiative@gmail.com" className="p-2 bg-white/5 hover:bg-white/10 rounded-full transition-colors">
