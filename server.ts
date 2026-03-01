@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express from "express";
-import { createServer as createViteServer } from "vite";
+
 import path from "path";
 import { fileURLToPath } from "url";
 import nodemailer from 'nodemailer';
@@ -349,6 +349,7 @@ async function startServer() {
     // We cannot use await at the top level in CommonJS without care, but since server.ts is type="module" (ESM), 
     // it's fine. We will configure Vercel to use the compiled app or directly run it.
     // For Vercel, this block will be skipped.
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
