@@ -376,11 +376,27 @@ if (process.env.VERCEL) {
     serverApp(req, res, next);
   });
 } else {
-  // Start server locally
+  // Start server locally with fallback port handling
   appPromise.then((app) => {
-    const PORT = 3000;
-    app.listen(PORT, "0.0.0.0", () => {
+    const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+    
+    const server = app.listen(PORT, "0.0.0.0", () => {
       console.log(`Server running on http://0.0.0.0:${PORT}`);
+    });
+
+    // Handle port conflict by using fallback ports
+    server.on('error', (error: any) => {
+      if (error.code === 'EADDRINUSE') {
+        console.warn(`Port ${PORT} in use, trying ${PORT + 1}...`);
+        setTimeout(() => {
+          server.close();
+          app.listen(PORT + 1, "0.0.0.0", () => {
+            console.log(`Server running on http://0.0.0.0:${PORT + 1}`);
+          });
+        }, 1000);
+      } else {
+        throw error;
+      }
     });
   });
 }
