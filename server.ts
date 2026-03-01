@@ -365,24 +365,19 @@ async function startServer() {
   return app;
 }
 
-const appPromise = startServer();
-export const vercelApp = express();
+const serverPromise = startServer();
 
-if (process.env.VERCEL) {
-  // Because our setup is async, we handle requests securely.
-  vercelApp.use(async (req, res, next) => {
-    const serverApp = await appPromise;
-    serverApp(req, res, next);
-  });
-} else {
-  // Start server locally ONLY
-  appPromise.then((app) => {
+// @vercel/node expects a function export for serverless API routes
+export default async function handler(req: any, res: any) {
+  const app = await serverPromise;
+  app(req, res);
+}
+
+if (!process.env.VERCEL) {
+  serverPromise.then((app) => {
     const PORT = Number(process.env.PORT) || 3000;
     app.listen(PORT, "0.0.0.0", () => {
       console.log(`Server running on http://0.0.0.0:${PORT}`);
     });
   });
 }
-
-// Vercel serverless functions can export an Express app directly.
-export default vercelApp;
