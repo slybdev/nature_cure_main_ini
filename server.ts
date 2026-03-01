@@ -369,16 +369,15 @@ const appPromise = startServer();
 export const vercelApp = express();
 
 if (process.env.VERCEL) {
-  // Setup the serverless export
   // Because our setup is async, we handle requests securely.
   vercelApp.use(async (req, res, next) => {
     const serverApp = await appPromise;
     serverApp(req, res, next);
   });
 } else {
-  // Start server locally
+  // Start server locally ONLY
   appPromise.then((app) => {
-    const PORT = 3000;
+    const PORT = Number(process.env.PORT) || 3000;
     app.listen(PORT, "0.0.0.0", () => {
       console.log(`Server running on http://0.0.0.0:${PORT}`);
     });
