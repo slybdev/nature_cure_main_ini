@@ -39,7 +39,7 @@ export default function Cart() {
     setLoading(true);
     try {
       const orderNumber = generateOrderNumber();
-      
+
       // 1. Create order
       const { data: order, error: orderError } = await supabase
         .from('orders')
@@ -301,7 +301,7 @@ export default function Cart() {
                 <div className="space-y-4">
                   <p className="text-sm font-medium text-slate-600">Contact us via WhatsApp to confirm payment:</p>
                   <a
-                    href={`https://wa.me/2348133481447?text=Hello Nature Cures Initiative, I would like to pay for my order ${orderData.order_number}. Total: ${formatPrice(orderData.total_amount)}`}
+                    href={`https://wa.me/2349153227253?text=Hello Nature Cures Initiative, I would like to pay for my order ${orderData.order_number}. Total: ${formatPrice(orderData.total_amount)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-5 bg-[#25D366] text-white rounded-2xl font-bold hover:bg-[#128C7E] transition-all shadow-xl flex items-center justify-center gap-3 text-lg"

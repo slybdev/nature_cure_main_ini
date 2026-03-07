@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="p-2 bg-white/10 rounded-lg">
-                <Leaf className="w-6 h-6 text-brand-gold" />
+              <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-white/10 p-0.5 border border-white/20">
+                <img src="/logo.jpg" alt="Nature Cures Initiative Logo" className="w-full h-full object-cover rounded-md" />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight leading-none">Nature Cures</span>
@@ -45,7 +45,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-emerald-100/70">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-brand-gold shrink-0" />
-                <span>+234 813 348 1447</span>
+                <span>+234 915 322 7253</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-brand-gold shrink-0" />

@@ -27,8 +27,8 @@ export default function Navbar() {
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="p-2 bg-brand-green rounded-lg group-hover:scale-110 transition-transform">
-                <Leaf className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 rounded-lg overflow-hidden group-hover:scale-105 transition-transform shrink-0 shadow-sm border border-slate-100">
+                <img src="/logo.jpg" alt="Nature Cures Initiative Logo" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-brand-green tracking-tight leading-none">Nature Cures</span>
@@ -62,7 +62,7 @@ export default function Navbar() {
                 </span>
               )}
             </Link>
-            
+
             {user ? (
               <div className="flex items-center gap-4">
                 <Link to="/dashboard" className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-brand-green">

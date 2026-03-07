@@ -15,7 +15,7 @@ export default function Dashboard() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
-  const [selectedProductForReview, setSelectedProductForReview] = useState<{id: string, name: string} | null>(null);
+  const [selectedProductForReview, setSelectedProductForReview] = useState<{ id: string, name: string } | null>(null);
   const [reviewRating, setReviewRating] = useState(5);
   const [reviewComment, setReviewComment] = useState('');
   const [isSubmittingReview, setIsSubmittingReview] = useState(false);
@@ -62,7 +62,7 @@ export default function Dashboard() {
         .from('orders')
         .update({ status: 'completed' })
         .eq('id', orderId);
-      
+
       if (error) throw error;
       toast.success('Delivery confirmed! Thank you.');
       fetchOrders();
@@ -190,7 +190,7 @@ export default function Dashboard() {
                 Our wellness experts are available via WhatsApp for any questions about your order or products.
               </p>
               <a
-                href="https://wa.me/2348133481447"
+                href="https://wa.me/2349153227253"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3 bg-white/10 hover:bg-white/20 rounded-xl font-bold transition-all"
@@ -261,7 +261,7 @@ export default function Dashboard() {
                       <div className="flex flex-wrap gap-4 pt-6 border-t border-slate-50">
                         {order.status === 'pending_payment' && (
                           <a
-                            href={`https://wa.me/2348133481447?text=Hello, I'm confirming payment for order ${order.order_number}`}
+                            href={`https://wa.me/2349153227253?text=Hello, I'm confirming payment for order ${order.order_number}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="px-6 py-3 bg-[#25D366] text-white rounded-xl text-sm font-bold hover:bg-[#128C7E] transition-all flex items-center gap-2"
@@ -351,9 +351,8 @@ export default function Dashboard() {
                           className="p-1 transition-transform hover:scale-110"
                         >
                           <Star
-                            className={`w-10 h-10 ${
-                              star <= reviewRating ? 'text-brand-gold fill-brand-gold' : 'text-slate-200'
-                            }`}
+                            className={`w-10 h-10 ${star <= reviewRating ? 'text-brand-gold fill-brand-gold' : 'text-slate-200'
+                              }`}
                           />
                         </button>
                       ))}
