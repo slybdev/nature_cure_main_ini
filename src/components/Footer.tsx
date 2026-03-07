@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-white/10 p-0.5 border border-white/20">
-                <img src="/logo.jpg" alt="Nature Cures Initiative Logo" className="w-full h-full object-cover rounded-md" />
+                <img src="/logo.png" alt="Nature Cures Initiative Logo" className="w-full h-full object-cover rounded-md" />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight leading-none">Nature Cures</span>
